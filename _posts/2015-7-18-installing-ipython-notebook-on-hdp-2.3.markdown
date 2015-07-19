@@ -34,30 +34,37 @@ yum groupinstall "Development tools"
 {% endhighlight %}
 
 ### Step 03: Install Python 2.7
-
+Since HDP 2.3 Preview Sandbox only comes with Python 2.6 installed, but IPython Notebook requires at least python 2.7, we have to install it manually. To do without recompiling it ourselves, we can use the CentOS Software Collections Repository, which we installed in the previews step (centos-release-SCL). So just type
 {% highlight bash %}
 yum install python27
 {% endhighlight %}
 
-and activate Python 2.7 for this session
+to get python 2.7. 
+
+Now we have to activate it for this session:
 {% highlight bash %}
 source /opt/rh/python27/enable
 {% endhighlight %}
 
 ### Step 04: Install pip for Python 2.7
-
+To get IPython Notebook and some more python libraries, we will use pip - the python package manager. So let's install pip:
 {% highlight bash %}
-wget https://bitbucket.org/pypa/setuptools/raw/bootstrap/ez_setup.py
+wget https://bitbucket.org/pypa/setuptools\
+/raw/bootstrap/ez_setup.py
+
 python ez_setup.py
 easy_install-2.7 pip
 {% endhighlight %}
 
 
 ### Step 05: Install IPython Notebook
-first, we will install some more "standard" python libraries for data scientist to have something to toy around with
+First, we will install some more "standard" python libraries for data scientist to have something to toy around with. Afterwards, we will install IPython Notebook.
 
 {% highlight bash %}
-pip install numpy scipy pandas scikit-learn tornado pyzmq pygments matplotlib jinja2 jsonschema
+pip install numpy scipy pandas \
+scikit-learn tornado pyzmq \
+pygments matplotlib jinja2 jsonschema
+
 pip install "ipython[notebook]"
 {% endhighlight %}
 
@@ -73,7 +80,7 @@ and change some values in the file
 (don't forget to remove the #-Symbol in front of the lines!)
 
 {% highlight bash %}
-cd ~/.ipython/profile_pyspark/
+nano ~/.ipython/profile_pyspark/ipython_notebook_config.py
 {% endhighlight %}
 
 new values: 
@@ -92,20 +99,20 @@ Create a new file in your home directory
 nano ~/start_ipython_notebook.sh
 {% endhighlight %}
 
-and add the following content in it
+and add the following content to it.
 {% highlight bash %}
 #!/bin/bash
 source /opt/rh/python27/enable
 IPYTHON_OPTS="notebook --profile pyspark" pyspark
 {% endhighlight %}
 
-now make this script executable
+Afterwars make this script executable
 {% highlight bash %}
 chmod +x start_ipython_notebook.sh
 {% endhighlight %}
 
 ### Step 08: Start IPython Notebook
-Now you're done! You may start IPython Notebook from your home directory with the command
+You're done! You may start IPython Notebook from your home directory with the command
 
 {% highlight bash %}
 ./start_ipython_notebook.sh
