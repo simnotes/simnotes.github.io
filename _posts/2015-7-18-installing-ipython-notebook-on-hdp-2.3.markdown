@@ -5,11 +5,11 @@ date:   2015-7-18
 published: true
 ---
 
-<p class="intro"><span class="dropcap">S</span>ince we're using the Hortonworks Data Plattform at work, I toyed around with the HDP 2.3 Preview Sandbox to see whats inside. One thing I've found is, they upgraded the Apache Spark Version from 1.2 to the more recently 1.3.1 release. Needless to say, it sparked my interest... (you see, what I did there?)</p>
+<p class="intro"><span class="dropcap">S</span>ince we're using the Hortonworks Data Plattform at work, I toyed around with the HDP 2.3 Sandbox to see whats inside. One thing I've found is, they upgraded the Apache Spark Version from 1.2 to the more recently 1.3.1 release. Needless to say, it sparked my interest... (you see, what I did there?)</p>
 
 Being more comfortable with the Python language than Scala, I decided to fire up the included pyspark shell, but found it not to be that engaging. I always liked the REPL interface from Python, the direct way of programming, but it laked the sustainability of "normal" written scripts. So to get a better grip on how everything works, I decided to upgrade the distribution and go ahead to install IPython notebook, which lets me program like on a shell, but has the longevity of written code. I reaaaaally like that interface :)
 
-So here is a step by step manual, of how to get IPython Notebook running on HDP 2.3 Preview Sandbox:
+So here is a step by step manual, of how to get IPython Notebook running on HDP 2.3 Sandbox:
 
 ### Step 01: Download and Install HDP
 - Download the Sandbox [here][hdp download]
@@ -88,7 +88,7 @@ new values:
 - c.NotebookApp.ip = '0.0.0.0'
 - c.NotebookApp.open_browser = False
 - c.NotebookApp.port = 8889
-- c.NotebookApp.notebook_dir = u'/usr/hdp/2.3.0.0-2130/spark/'
+- c.NotebookApp.notebook_dir = u'/usr/hdp/2.3.0.0-2557/spark/'
 
 You may also use this <a href="{{ '/assets/files/config_spark.sh' | prepend: site.baseurl }}">script</a> to to the changes for you.
 
