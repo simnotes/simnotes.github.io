@@ -85,7 +85,7 @@ nano ~/.ipython/profile_pyspark/ipython_notebook_config.py
 
 new values: 
 
-- c.NotebookApp.ip = '*'
+- c.NotebookApp.ip = '0.0.0.0'
 - c.NotebookApp.open_browser = False
 - c.NotebookApp.port = 8889
 - c.NotebookApp.notebook_dir = u'/usr/hdp/2.3.0.0-2130/spark/'
