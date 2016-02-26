@@ -67,7 +67,7 @@ pip install numpy scipy pandas \
 scikit-learn tornado pyzmq \
 pygments matplotlib jinja2 jsonschema
 
-pip install juypter
+pip install jupyter
 {% endhighlight %}
 
 
@@ -102,8 +102,6 @@ You're done! You may start Jupyter from your home directory with the command
 After that you may open your webbrowser and open http://127.0.0.1:8889 to get to the Jupyter startpage or http://127.0.0.1:4040 to open Spark UI, which gets you some insight into memory consumption and duration of our Apache Spark jobs.
 
 Cheers!
-
-
 
 ___
 
