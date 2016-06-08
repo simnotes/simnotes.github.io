@@ -5,7 +5,7 @@ date:   2016-6-8
 published: true
 ---
 
-**Update:** I revised the [old article from January 2016][old article] to work with the currently available Hortonworks Dataplatform HDP 2.4 and Jupyter. 
+**Update:** I revised the [old article from January 2016][old article] to work with the currently available Hortonworks Dataplatform HDP 2.4 and Jupyter. Thanks to Carolyn Duby for mentioning the updated download location for pypa setup tools!
 
 <p class="intro"><span class="dropcap">S</span>ince we're using the Hortonworks Data Plattform at work, I toyed around with the HDP 2.4 Sandbox to see whats inside. One thing I've found is, they upgraded the Apache Spark Version from 1.5 to the more recently 1.6 release. Needless to say, it sparked my interest... (you see, what I did there?)</p>
 
@@ -85,7 +85,7 @@ IPYTHON_OPTS="notebook --port 8889 \
 --ip='*' --no-browser" pyspark
 {% endhighlight %}
 
-Afterwars make this script executable
+Afterwards make this script executable
 {% highlight bash %}
 chmod +x ~/start_jupyter.sh
 {% endhighlight %}
